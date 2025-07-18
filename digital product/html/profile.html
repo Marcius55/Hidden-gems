@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-header">
+        <img class="profile-avatar" src="/icons/profile_avatar.png" alt="Profile avatar">
+        <div class="profile-info">
+          <h2 class="profile-name">John Doe</h2>
+          <p class="profile-subtitle">Hidden gem hunter</p>
+        </div>
+              <img class="profile-settings" src="/icons/settings_icon.png" alt="Settings">
+            </div>
+                        <button class="explorer-level">Explorer level: 4</button>
+                        </div>
+
+            <div class="profile-stats">
+              <div class="stat">
+                <span class="stat-number">35</span>
+                <span class="stat-label">Places visited</span>
+              </div>
+      <div class="stat">
+        <span class="stat-number">15</span>
+        <span class="stat-label">Reviews</span>
+      </div>
+        <div class="stat">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Saved places</span>
+        </div>
+      </div>
+
+      <h3 class="saved-title">Saved places</h3>
+      <div class="saved-places">
+              <div class="saved-card">
+          <img class="saved-img" src="/images/water_image.webp" alt="Whispering Pines Hollow">
+        <div class="saved-info">
+          <div class="saved-title-row">
+            <span class="saved-name">Whispering Pines Hollow</span>
+<i class="far fa-heart heart-icon"></i>
+          </div>
+          <span class="saved-location">USA, North Carolina</span>
+        </div>
+      </div>
+
+      <div class="saved-card">
+        <img class="saved-img" src="/images/springs_image.jpg" alt="Cave of Still Water">
+        <div class="saved-info">
+          <div class="saved-title-row">
+                        <span class="saved-name">Cave of Still Water</span>
+<i class="far fa-heart heart-icon"></i>
+          </div>
+          <span class="saved-location">Zakynthos, Greece</span>
+        </div>
+      </div>
+
+      <div class="saved-card">
+  <div class="saved-img-container">
+    <img class="saved-img" src="/images/wall_image.jpg" alt="Forgotten Fort Wall">
+    <i class="far fa-heart heart-icon"></i>
+  </div>
+  <div class="saved-info">
+    <div class="saved-title-row">
+      <span class="saved-name">Forgotten Fort Wall</span>
+    </div>
+    <span class="saved-location">Jaipur, India</span>
+  </div>
+</div>
+      </div>
+
+    <div class="category-preference-section">
+      <div class="category-header-row">
+        <span class="category-total">Total: 4</span>
+        <a class="category-viewall" href="#">View all</a>
+      </div>
+
+      <h3 class="category-title">Category preference</h3>
+      <div class="category-grid">
+        <div class="category-card">
+          <img src="/icons/culture_icon.png" alt="Culture" class="category-icon">
+          <div class="category-label">Culture</div>
+          <div class="category-desc">Museums, Historical Sites</div>
+        </div>
+
+        <div class="category-card">
+          <img src="/icons/art_icon.png" alt="Art" class="category-icon">
+          <div class="category-label">Art</div>
+          <div class="category-desc">Murals, creative spaces, sculptures</div>
+        </div>
+
+        <div class="category-card">
+          <img src="/icons/nature_icon.png" alt="Nature" class="category-icon">
+          <div class="category-label">Nature</div>
+          <div class="category-desc">Parks, Gardens, Trails, Hills</div>
+        </div>
+
+        <div class="category-card">
+          <img src="/icons/urban_icon.png" alt="Urban" class="category-icon">
+          <div class="category-label">Urban</div>
+          <div class="category-desc">alleys, street murals, rooftops</div>
+        </div>
+
+          <div class="category-card">
+            <img src="/icons/ruins_icon.png" alt="Ruins" class="category-icon">
+            <div class="category-label">Ruins</div>
+            <div class="category-desc">Forts, crumbled walls, lost sites</div>
+          </div>
+
+          <div class="category-card">
+            <img src="/icons/water_icon.png" alt="Waterscapes" class="category-icon">
+            <div class="category-label">Waterscapes</div>
+            <div class="category-desc">Springs, hidden lakes, waterfalls</div>
+          </div>
+
+          <div class="category-card">
+            <img src="/icons/rural_icon.png" alt="Rural" class="category-icon">
+            <div class="category-label">Rural</div>
+            <div class="category-desc">Farms, villages, countryside</div>
+          </div>
+        </div>
+        
+      <button class="update-preferences-btn">Update preferences</button>
+    </div>
+    
+            <footer class="mobile-navbar">
+  <a href="home.html" class="home_navbar active">
+    <img class="home_icon" src="/icons/home_icon.png" alt="">
+    <p class="homepage">Home</p>
+  </a>
+  <a href="explore.html" class="explore_navbar">
+    <img class="explore_icon" src="/icons/explore_icon.png" alt="">
+    <p class="explorepage">Explore</p>
+  </a>
+  <a href="profile.html" class="profile_navbar">
+    <img class="profile_icon" src="/icons/profile_icon_active.png" alt="">
+    <p class="profilepage">Profile</p>
+  </a>
+</footer>
+    </div>
+  </div>
+
+
+    <script>
+        document.querySelectorAll('.category-card').forEach(card => 
+            card.onclick = () => card.classList.toggle('selected')
+        );
+
+             document.querySelectorAll('.heart-icon').forEach(heart => 
+            heart.onclick = () => heart.classList.toggle('saved')
+        );
+    </script>
+  
+</body>
+</html>

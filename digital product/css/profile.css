@@ -1,0 +1,381 @@
+body {
+background: rgb(178, 202, 210);
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+:root {
+  /* primary */
+  --background: #FFFFFF;
+  --secondary: #F4F4F4;
+  --navy-blue: #3E4C8A;
+
+  /* text */
+  --text-white: #F0F0F0;
+  --text-black: #111111;
+  --text-gray: #8C8A97;
+}
+
+.profile-container { 
+    max-width: 430px; 
+    margin: 0 auto; 
+    background-color: #fff;
+    min-height: 100vh; 
+    padding-bottom: 80px; 
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0e0;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-card {
+  margin: 28px;
+  padding-top: 16px;
+}
+
+.profile-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+}
+
+.profile-subtitle {
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+}
+
+.profile-settings {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.explorer-level {
+  width: 100%;
+  background: #3d448f;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 0;
+  margin: 12px 0 18px 0;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  text-align: center;
+  margin: 28px;
+}
+
+.stat-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3d448f;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: #888;
+}
+
+/* saved places */
+
+.saved-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 18px 0 10px 0;
+  color: #222;
+  margin: 28px;
+}
+
+.saved-places {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 28px;
+}
+
+.saved-card {
+  background: #f6f6f6;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.saved-img-container {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.saved-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.saved-info {
+  padding: 10px 14px 12px 14px;
+}
+
+.saved-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.saved-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  background: var(--background);
+  border-radius: 50%;
+  padding: 7px;
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #ff4757;
+}
+
+.heart-icon:hover {
+color: red;
+transition: 0.5s;
+}
+
+ .heart-icon.saved {
+  color: var(--text-black);
+   }
+
+.saved-location {
+  font-size: 0.97rem;
+  color: #666;
+}
+
+/* Category Preference Section */
+.category-preference-section {
+  margin-top: 32px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 10px 24px 10px;
+}
+
+.category-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 28px;
+}
+
+.category-total {
+  color: #3d448f;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.category-viewall {
+  color: #3d448f;
+  font-size: 0.98rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.category-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 28px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 28px;
+}
+.category-card {
+  background: #f8f9fa;
+  border: 1.5px solid var(--navy-blue);
+  border-radius: 14px;
+  padding: 12px 8px 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  min-height: 120px;
+  box-sizing: border-box;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  background: var(--navy-blue);
+}
+
+.category-card:hover .category-label,
+.category-card:hover .category-desc {
+  color: white;
+}
+
+
+.category-icon {
+  width: 128px;
+  height: 128px;
+  margin-bottom: 6px;
+  object-fit: cover;
+}
+
+.category-label {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #3d448f;
+  margin-bottom: 2px;
+}
+
+.category-desc {
+  font-size: 0.93rem;
+  color: #666;
+  text-align: center;
+}
+
+  .category-card.selected {
+  background: var(--navy-blue);
+  border-color: var(--navy-blue);
+   }
+
+  .category-card.selected .category-label,
+  .category-card.selected .category-desc {
+  color: white;
+  }
+
+.update-preferences-btn {
+  width: 100%;
+  background: #fff;
+  color: #3d448f;
+  border: 1.5px solid #3d448f;
+  border-radius: 18px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  padding: 10px 0;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.update-preferences-btn:hover {
+  background: #3d448f;
+  color: #fff;
+}
+
+.mobile-navbar {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 430px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1200;
+  height: 64px;
+}
+
+.mobile-navbar a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-gray);
+  padding: 8px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+
+.mobile-navbar img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  margin: 0 auto 2px auto;
+}
+
+.mobile-navbar p {
+  font-size: 0.92rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.profilepage {
+  color: var(--navy-blue);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-gray);
+}
+
+
+
+/* phone */
+
+@media (max-width: 500px) {
+  .profile-container {
+    max-width: 100vw;
+    border-radius: 0;
+    padding: 12px 2vw 24px 2vw;
+  }
+  .saved-img {
+    height: 90px;
+  }
+  .category-preference-section {
+    padding: 10px 2vw 18px 2vw;
+    border-radius: 0;
+    margin-top: 18px;
+  }
+  .category-grid {
+    gap: 8px;
+  }
+  .category-card {
+    min-height: 90px;
+    padding: 8px 2px 8px 2px;
+  }
+  .category-icon {
+    width: 36px;
+    height: 36px;
+  }
+}

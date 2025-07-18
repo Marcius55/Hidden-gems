@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechelen Explorer</title>
+     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></head>
+<body>
+
+    <!-- there are total of 6 pages -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Digital product</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+<body>
+    <div class="phone-container">
+        <header>
+            <div class="header-wrap">
+                <img src="/icons/location_icon.png" alt="">
+                <h2 class="header-title">Mechelen, Belgium</h2>
+            </div>
+            <img src="/icons/bell_icon.png" alt="">
+        </header>
+
+        <p class="progress-title">Your progress</p>
+        <div class="your-progress-bar">
+            <p class="progress-bar-text">You've explored 19 out of 100 hidden gems in Belgium!</p>
+            <div class="progress-bar"></div>
+        </div>
+
+   <div class="rated-places">
+  <h2 class="section-title">Most rated places</h2>
+  <div class="cards-container">
+    <div class="card">
+  <div class="container-img">
+    <!-- this goes to another page -->
+    <a href="alley.html" class="image-link" aria-label="Go to Alley"></a>
+    <i class="far fa-heart heart_icon" tabindex="0"></i>
+  </div>
+            <div class="info">
+                <div class="info-wrap">
+                    <div class="title">Art Alley</div>
+                    <div class="rating">
+                        <img src="icons/star_icon_filled.png" alt="">
+                        <p class="rating-number">4.8</p>
+                    </div>
+                </div>
+                <div class="location">Mechelen, Belgium</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container-img-2">
+                <i class="far fa-heart heart_icon"></i>
+            </div>
+            <div class="info">
+                <div class="info-wrap">
+                    <div class="title">Hilltop</div>
+                    <div class="rating">
+                        <p class="rating-number">4.5</p>
+                    </div>
+                </div>
+                <div class="location">Mechelen, Belgium</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="similar-places">
+    <h2 class="section-title">Places liked by people like you</h2>
+    <div class="cards-container">
+        <div class="card">
+            <div class="container-img-3">
+                <i class="far fa-heart heart_icon" tabindex="0"></i>
+            </div>
+            <div class="info">
+                <div class="info-wrap">
+                    <div class="title">Moss Trail</div>
+                    <div class="rating">
+                        <img src="icons/star_icon_filled.png" alt="">
+                        <p class="rating-number">4.5</p>
+                    </div>
+                </div>
+                <div class="location">Mechelen, Belgium</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="container-img-4">
+                <i class="far fa-heart heart_icon" tabindex="0"></i>
+            </div>
+            <div class="info">
+                <div class="info-wrap">
+                    <div class="title">Springs</div>
+                    <div class="rating">
+                        <img src="icons/star_icon_filled.png" alt="">
+                        <p class="rating-number">4.4</p>
+                    </div>
+                </div>
+                <div class="location">Mechelen, Belgium</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div class="best-season-section">
+            <div class="chart-card">
+                <div class="chart-header">
+                    <span class="chart-title" id="chartTitle">Best by category in Winter</span>
+                    <select id="seasonSelect" class="season-dropdown">
+                        <option value="Winter">Winter</option>
+                        <option value="Summer">Summer</option>
+                        <option value="Autumn">Autumn</option>
+                        <option value="Autumn">Spring</option>
+
+                    </select>
+                </div>
+                <div class="chart-container">
+                    <canvas id="sustainabilityChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mobile-navbar">
+  <a href="html/home.html" class="home_navbar active">
+    <img class="home_icon" src="/icons/home_icon_active.png" alt="">
+    <p class="homepage">Home</p>
+  </a>
+  <a href="explore.html" class="explore_navbar">
+    <img class="explore_icon" src="/icons/explore_icon.png" alt="">
+    <p class="explorepage">Explore</p>
+  </a>
+  <a href="profile.html" class="profile_navbar">
+    <img class="profile_icon" src="/icons/profile_icon.png" alt="">
+    <p class="profilepage">Profile</p>
+  </a>
+</footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart-config.js"></script>
+</body>
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const seasonSelect = document.getElementById('seasonSelect');
+        const sustainabilityChartCanvas = document.getElementById('sustainabilityChart');
+        const chartTitle = document.getElementById('chartTitle');
+        let sustainabilityChart;
+
+        // Initial chart rendering
+        renderChart(seasonSelect.value);
+
+        seasonSelect.addEventListener('change', function() {
+            renderChart(seasonSelect.value);
+        });
+
+        function renderChart(season) {
+            if (sustainabilityChart) {
+                sustainabilityChart.destroy();
+            }
+
+            const chartData = {
+                Winter: [7.2, 5.1, 4.2, 6.8, 6.0, 5.5],   // Average ≈ 5.8
+                Spring: [7.4, 6.8, 7.5, 8.0, 7.1, 6.5],   // Average ≈ 7.2
+                Autumn: [6.5, 6.1, 6.0, 6.8, 6.2, 6.0],   // Average ≈ 6.3
+                Summer: [8.2, 8.5, 8.0, 9.0, 8.4, 8.1]    // Average ≈ 8.4
+
+
+            };
+
+            chartTitle.textContent = `Best by category in ${season}`;
+
+            const data = {
+                labels: ['Nature', 'Urban', 'Trails', 'Culture', 'Art', 'Ruins'],
+                datasets: [{
+                    label: 'Sustainability score',
+                    data: chartData[season],
+                    backgroundColor: '#3E4C8A',
+                    barPercentage: 0.6,
+                    categoryPercentage: 0.7
+                }]
+            };
+
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 10,
+                            ticks: {
+                                color: '#6d6d6d',
+                                stepSize: 2,
+                                font: { family: 'Outfit, sans-serif', size: 14 }
+                            },
+                            grid: {
+                                color: '#e5e5e5'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Sustainability score',
+                                color: '#6d6d6d',
+                                font: { family: 'Outfit, sans-serif', size: 14 }
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#b0b0b0',
+                                font: { family: 'Outfit, sans-serif', size: 14 },
+                                maxRotation: 0, // <--- Make labels straight
+                                minRotation: 0  // <--- Make labels straight
+                            },
+                            grid: {
+                                color: '#e5e5e5',
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            };
+
+            sustainabilityChart = new Chart(sustainabilityChartCanvas, config);
+        }
+    });
+
+           document.querySelectorAll('.heart_icon').forEach(heart => 
+            heart.onclick = () => heart.classList.toggle('saved')
+        );
+
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write a review</title>
+  <link rel="stylesheet" href="../css/review.css">
+</head>
+<body>
+  <div class="review-container">
+    <div class="review-header">
+      <a href="alley.html"><button class="back-btn"><img src="/icons/previous_button.png" alt="Back"></button></a>
+      <p class="review-title">Write a review</p>
+    </div>
+
+    <form class="review-form" id="reviewForm">
+      <textarea class="review-textarea" id="reviewText" placeholder="Share your experiences" required></textarea>
+      <div class="review-rating-row">
+        <label class="rating-label" for="ratingSelect">Your rating</label>
+        <select id="ratingSelect" class="rating-select" required>
+          <option value="" disabled selected>Rate</option>
+          <option value="5">5 - Excellent</option>
+          <option value="4">4 - Good</option>
+          <option value="3">3 - Average</option>
+          <option value="2">2 - Poor</option>
+          <option value="1">1 - Terrible</option>
+        </select>
+      </div>
+
+      <div class="review-photos-section">
+        <label class="photos-label">Photos</label>
+        <div class="photo-upload-box">
+          <input type="file" id="photo-upload" accept="image/*" multiple style="display:none;">
+          <label for="photo-upload" class="photo-upload-label">
+            <img src="/icons/camera_icon.png" alt="Add Photos" class="camera-icon">
+            <div class="add-photos-text">Add Photos</div>
+            <div class="add-photos-subtext">Tap to upload photos</div>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+      <div id="thankYouMsg" class="thank-you-msg" style="display:none;">Thank you for your review!</div>
+    </form>
+    <script>
+      document.getElementById('reviewForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var text = document.getElementById('reviewText').value.trim();
+        var rating = document.getElementById('ratingSelect').value;
+
+        if (!text || !rating) {
+          alert('Please provide both a review and a rating.');
+          return;
+
+        }
+        document.getElementById('thankYouMsg').style.display = 'block';
+        setTimeout(function() {
+          document.getElementById('thankYouMsg').style.display = 'none';
+          document.getElementById('reviewForm').reset();
+        }, 2000);
+      });
+    </script>
+  </div>
+</body>
+</html>

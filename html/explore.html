@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore</title>
+  <link rel="stylesheet" href="../css/explore.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+</head>
+<body>
+  <div class="phone-container">
+    <div id="map"></div>
+    <div id="routeInstructions"></div>
+    <button id="stopNavBtn" onclick="stopNavigation()">Stop Navigation</button>
+    <a href="place.html"><button class="add-place-btn">Add a new place</button></a>
+
+    <!-- Mobile Navbar -->
+           <footer class="mobile-navbar">
+  <a href="home.html" class="home_navbar active">
+    <img class="home_icon" src="/icons/home_icon.png" alt="">
+    <p class="homepage">Home</p>
+  </a>
+  <a href="explore.html" class="explore_navbar">
+    <img class="explore_icon" src="/icons/explore_icon_active.png" alt="">
+    <p class="explorepage">Explore</p>
+  </a>
+  <a href="profile.html" class="profile_navbar">
+    <img class="profile_icon" src="/icons/profile_icon.png" alt="">
+    <p class="profilepage">Profile</p>
+  </a>
+</footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
+
+    <script src="/js/explore.js"></script>
+    
+  </div>
+  
+</body>
+</html>

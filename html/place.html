@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit a gem</title>
+  <link rel="stylesheet" href="../css/place.css" />
+</head>
+<body>
+  <div class="place-container">
+    
+    <div class="place-header">
+      <a href="explore.html">
+        <button class="back-btn">
+          <img src="/icons/previous_button.png" alt="Back" />
+        </button>
+      </a>
+      <p class="header-title">Submit a gem</p>
+    </div>
+
+    <form class="place-form">
+      
+      <label class="input-label" for="placeName">Name of the place</label>
+      <input type="text" id="placeName" class="place-input" required />
+
+      <label class="input-label" for="placeDesc">Description</label>
+      <input type="text" id="placeDesc" class="place-input" required />
+
+      <label class="input-label">Category</label>
+      <div class="category-grid">
+        <button type="button" class="category-btn">Architecture</button>
+        <button type="button" class="category-btn">History</button>
+        <button type="button" class="category-btn">Trails</button>
+        <button type="button" class="category-btn">Urban</button>
+        <button type="button" class="category-btn">Nature</button>
+        <button type="button" class="category-btn">Arts</button>
+      </div>
+
+      <button type="button" class="location-btn">
+        Current Location Detected<br />
+        <span class="location-coords">Lat: 50.8503, Lng: 4.3517</span>
+      </button>
+
+      <label class="input-label">Photos</label>
+      <div class="photo-upload-box">
+        <input type="file" id="photo-upload" accept="image/*" multiple style="display: none;" />
+        <label for="photo-upload" class="photo-upload-label">
+          <img src="/icons/camera_icon.png" alt="Add Photos" class="camera-icon" />
+          <div class="add-photos-text">Add Photos</div>
+          <div class="add-photos-subtext">Tap to upload photos (1-2 photos recommend)</div>
+        </label>
+      </div>
+
+      <div class="photo-preview-row">
+        <div class="photo-thumb">
+          <img src="/images//alley_image.jpg" alt="Preview 1" />
+          <button type="button" class="remove-photo-btn">✕</button>
+        </div>
+        <div class="photo-thumb">
+          <img src="/images/alley_image2.jpg" alt="Preview 2" />
+          <button type="button" class="remove-photo-btn">✕</button>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    
+  </div>
+
+  <!-- Add this script at the end of your place.html, before </body> -->
+<script>
+  // Allow selecting multiple categories
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.classList.toggle('selected');
+    });
+  });
+</script>
+</body>
+</html>
